@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "mysqlrootpassword",
+    "database": "affluntchallenge",
+    "host": "localhost",
+    "dialect": "mariadb"
+  },
+  "test": {
+    "username": "root",
+    "password": "mysqlrootpassword",
+    "database": "affluntchallenge",
+    "host": "localhost",
+    "dialect": "mariadb"
+  },
+  "production": {
+    "username": "root",
+    "password": "mysqlrootpassword",
+    "database": "affluntchallenge",
+    "host": "localhost",
+    "dialect": "mariadb"
+  }
+}

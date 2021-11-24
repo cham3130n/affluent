@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  mariadb:
+    image: mariadb:10.2
+    env_file:
+      - .env
+    networks:
+      - backend
+    restart: on-failure
+    ports:
+      - 3306:3306
+    volumes:
+      - ${PWD}/mariadb:/var/lib/mysql
+
+networks:
+  backend:
+    driver: bridge
