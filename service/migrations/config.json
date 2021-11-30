@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": "mysqlrootpassword",
+    "username": "postgres",
+    "password": "postgres",
     "database": "affluntchallenge",
     "host": "localhost",
-    "dialect": "mariadb"
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
     "password": "mysqlrootpassword",
     "database": "affluntchallenge",
     "host": "localhost",
-    "dialect": "mariadb"
+    "dialect": "postgres"
   },
   "production": {
     "username": "root",
     "password": "mysqlrootpassword",
     "database": "affluntchallenge",
     "host": "localhost",
-    "dialect": "mariadb"
+    "dialect": "postgres"
   }
 }

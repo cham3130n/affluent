@@ -11,6 +11,7 @@ docker-entrypoint/ocr-lambda.zip
 
 # MariaDB local storage
 mariadb
+postgres
 
 # Logs
 logs

@@ -17,8 +17,8 @@ export interface IDatabase {
   close(): Promise<void>;
 }
 
-export interface IApiClient {
-  getRecords(): ApiUserItem[] | null | any | unknown;
+export interface IWebClient {
+  getRecords(): WebPagePerformanceItem[] | null | any | unknown;
 }
 
 export interface ILogger {
@@ -34,10 +34,14 @@ export enum MySQL {
   database = 'PG_DATABASE',
 }
 
-export type ApiUserItem = {
+export type WebPagePerformanceItem = {
   id: number,
-  email: string,
-  first_name: string,
-  last_name: string,
-  avatar: string,
+  date: Date,
+  clicks: number,
+  commissionTotal: number,
+  conversionRate: number,
+  earningsPerClick: number,
+  impressions: number,
+  leadsNet: number,
+  salesNet: number,
 }
