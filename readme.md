@@ -1,4 +1,4 @@
-##Description
+## Description
 Monorepository for code challenge contains three parts:
 1. Postgres container to serve database. Though the database itself is placed outside of container in bound folder `./postgress` 
 2. API client project written in TypeScript in folder `./service`
@@ -8,7 +8,7 @@ Monorepository for code challenge contains three parts:
 >
 > *Project includes environment files `.env` despite the fact they should not exist in repostory.*
 
-##Requirements
+## Requirements
 
 Running this repository assumes that client has installed next tools:
 * Node 14 or higher
@@ -17,7 +17,7 @@ Running this repository assumes that client has installed next tools:
 
 > The project was developed and deployed in Linux (OS X) environment. Therefore the behavior on Windows platforms keeps undetermined.  
 
-##Deployment
+## Deployment
 
 Project root folder contains scripts that should be run first to create all needed folders and dependencies
 ```
@@ -41,7 +41,7 @@ docker-compose up puppeteer
 ```
 > *Postgres container is a dependency for both application containers, so there's no need to run it directly*
 
-##Manual rebuild
+## Manual rebuild
 One can easily rebuild each of applications. Only few steps to reach.
 ```
 # Go to the project folder
