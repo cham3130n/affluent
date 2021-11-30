@@ -18,7 +18,7 @@ export default class WebClient implements IWebClient{
     });
     const page = await browser.newPage();
 
-    this.logger.log('Opening', webPage, '...');
+    this.logger.log('Surfing to ', webPage);
 
     await page.goto(webPage, { waitUntil: 'networkidle0' });
 
@@ -31,6 +31,10 @@ export default class WebClient implements IWebClient{
     await page.waitForNavigation({ waitUntil: 'load' });
 
     this.logger.log('Page loaded:', await page.title());
+
+    /**
+     * Unfinished part since portal is under maintenance
+     */
 
     this.logger.log('Finished surfing.');
 
