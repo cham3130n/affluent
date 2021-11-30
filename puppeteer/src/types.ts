@@ -34,6 +34,12 @@ export enum MySQL {
   database = 'PG_DATABASE',
 }
 
+export enum WebPage {
+  url = 'WEB_PAGE_URL',
+  username = 'WEB_PAGE_USERNAME',
+  password = 'WEB_PAGE_PASSWORD',
+}
+
 export type WebPagePerformanceItem = {
   id: number,
   date: Date,

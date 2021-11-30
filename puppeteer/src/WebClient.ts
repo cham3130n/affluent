@@ -1,16 +1,22 @@
 import puppeteer from "puppeteer/lib/cjs/puppeteer/node-puppeteer-core";
 
-import { WebPagePerformanceItem, IConfig, ILogger, IWebClient } from './types';
-
-const webPage = 'https://develop.pub.afflu.net';
-const username = 'developertest@affluent.io';
-const password = 'Wn4F6g*N88EPiOyW';
+import { WebPagePerformanceItem, IConfig, ILogger, IWebClient, WebPage } from './types';
 
 export default class WebClient implements IWebClient{
+  webPage: string;
+
+  username: string;
+
+  password: string;
+
   constructor(
     private readonly config: IConfig,
     private readonly logger: ILogger,
-  ) {}
+  ) {
+    this.webPage = this.config.get(WebPage.url) || '';
+    this.username = this.config.get(WebPage.username) || '';
+    this.password = this.config.get(WebPage.password) || '';
+  }
 
   async * getRecords(): AsyncGenerator<WebPagePerformanceItem[] | null | any | unknown> {
     const browser = await puppeteer.launch({
@@ -18,15 +24,15 @@ export default class WebClient implements IWebClient{
     });
     const page = await browser.newPage();
 
-    this.logger.log('Surfing to ', webPage);
+    this.logger.log('Surfing to ', this.webPage);
 
-    await page.goto(webPage, { waitUntil: 'networkidle0' });
+    await page.goto(this.webPage, { waitUntil: 'networkidle0' });
 
     this.logger.log('Page loaded:', await page.title());
     this.logger.log('Filling in credentials...');
 
-    await page.type('input[name="username"]', username);
-    await page.type('input[name="password"]', password);
+    await page.type('input[name="username"]', this.username);
+    await page.type('input[name="password"]', this.password);
     await page.click('button[type="submit"]');
     await page.waitForNavigation({ waitUntil: 'load' });
 

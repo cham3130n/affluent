@@ -39,4 +39,8 @@ export default class ApiClient implements IApiClient{
       data: data ? JSON.stringify(data) : undefined,
     });
   }
+
+  static getParserName(): string {
+    return 'apiReader';
+  }
 }
